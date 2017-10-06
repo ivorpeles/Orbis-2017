@@ -6,10 +6,6 @@ from PythonClientAPI.Game.World import World
 class PlayerAI:
 
     def __init__(self):
-        """
-        Any instantiation code goes here
-        """
-        print("Grid Optimization 2.0")
         self.setup_phase = True
         self.width = None
         self.height = None
@@ -19,13 +15,6 @@ class PlayerAI:
         self.wall_count = 0
 
     def do_move(self, world, friendly_units, enemy_units):
-        """
-        This method will get called every turn.
-        
-        :param world: World object reflecting current game state
-        :param friendly_units: list of FriendlyUnit objects
-        :param enemy_units: list of EnemyUnit objects
-        """
         if self.setup_phase == True:
             # this if block will compute the optimal packing of one-nest
             # clusters for this map. these are tiles we don't want to step
